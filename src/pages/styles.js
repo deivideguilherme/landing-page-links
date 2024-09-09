@@ -14,23 +14,30 @@ export const ContainerLogo = styled.div`
 `;
 
 export const ContainerMenu = styled.nav`
+  background-color: rgba(234, 234, 234, 0.6);
+  border-radius: 5px;
+  width: 700px;
+  height: 50px;
+
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 40px;
 
   a {
     text-decoration: none;
     color: inherit;
     position: relative;
+    text-transform: uppercase;
   }
 
   a::after {
     content: " ";
     width: 0%;
-    height: 20px;
-    background-color: rgba(255, 4, 4, 0.3);
+    height: 2px;
+    background-color: #ff0101;
     position: absolute;
-    bottom: 2px;
+    bottom: -13px;
     left: 0;
     transition: 0.5s ease-in-out;
   }
