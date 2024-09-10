@@ -14,36 +14,97 @@ export const ContainerLogo = styled.div`
 `;
 
 export const ContainerMenu = styled.nav`
-  background-color: rgba(234, 234, 234, 0.6);
-  border-radius: 5px;
-  width: 700px;
-  height: 50px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  border-radius: 40px;
+  background-color: #6bb84a;
+  background: #fff;
+  padding: 0 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  .content {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    list-style: none;
     position: relative;
-    text-transform: uppercase;
-  }
 
-  a::after {
-    content: " ";
-    width: 0%;
-    height: 2px;
-    background-color: #ff0101;
-    position: absolute;
-    bottom: -13px;
-    left: 0;
-    transition: 0.5s ease-in-out;
-  }
+    .icone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
+    }
 
-  a:hover::after {
-    width: 100%;
+    .icone.active {
+      transform: translateY(-10px);
+    }
+
+    .awesome {
+      font-size: 30px;
+      color: #bfbebe;
+      transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
+    }
+
+    .icone.active .awesome {
+      color: #6bb84a;
+    }
+
+    .text {
+      position: absolute;
+      font-size: 12px;
+      font-weight: 400;
+      color: #6bb84a;
+      opacity: 0;
+      transform: translateY(32px);
+      transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
+    }
+
+    .icone.active .text {
+      opacity: 1;
+    }
+
+    .indicador {
+      position: absolute;
+      top: -1px;
+      left: 50px;
+      height: 22px;
+      width: 22px;
+      background-color: #fff;
+      border: 5px solid #6bb84a;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
+    }
+
+    .indicador::before,
+    .indicador::after {
+      content: " ";
+      position: absolute;
+      bottom: -8px;
+      height: 24px;
+      width: 19px;
+    }
+
+    .indicador::before {
+      left: -22px;
+      background-color: #fff;
+      border-top-right-radius: 25px;
+      box-shadow: 1px -13px #6bb84a;
+    }
+
+    .indicador::after {
+      right: -22px;
+      background-color: #fff;
+      border-top-left-radius: 25px;
+      box-shadow: -1px -13px #6bb84a;
+    }
   }
 `;
 

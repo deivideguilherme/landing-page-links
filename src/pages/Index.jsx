@@ -1,3 +1,4 @@
+//Importação componentes
 import {
   ContainerMenu,
   ContainerLogo,
@@ -6,6 +7,16 @@ import {
   LinuxPro,
 } from "./styles";
 
+//Importação icones menu
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons/faHouse";
+import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
+import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import { faAddressCard } from "@fortawesome/free-solid-svg-icons/faAddressCard";
+import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons/faMapLocationDot";
+
+//Importação imagens
 import logoLinks from "../assets/logo-links.png";
 import logoLinuxPro from "../assets/logo-linux-professional-institute.png";
 import cloudComputing from "../assets/computacao-em-nuvem.jpg";
@@ -25,11 +36,50 @@ function Index() {
         </ContainerLogo>
 
         <ContainerMenu>
-          <a href="/">Home</a>
-          <a href="/">Quem somos?</a>
-          <a href="/">O que fazemos?</a>
-          <a href="/">Depoimentos</a>
-          <a href="/">Contato</a>
+          <ul className="content">
+            <li className="list">
+              <a href="/" className="icone active">
+                <FontAwesomeIcon icon={faHouse} className="awesome" />
+                <span className="text">Home</span>
+              </a>
+            </li>
+
+            <li className="list">
+              <a href="/" className="icone">
+                <FontAwesomeIcon icon={faPeopleGroup} className="awesome" />
+                <span className="text">Quem Somos?</span>
+              </a>
+            </li>
+
+            <li className="list">
+              <a href="/" className="icone">
+                <FontAwesomeIcon icon={faSquareCheck} className="awesome" />
+                <span className="text">O que fazemos?</span>
+              </a>
+            </li>
+
+            <li className="list">
+              <a href="/" className="icone">
+                <FontAwesomeIcon icon={faCommentDots} className="awesome" />
+                <span className="text">Depoimentos</span>
+              </a>
+            </li>
+
+            <li className="list">
+              <a href="/" className="icone">
+                <FontAwesomeIcon icon={faAddressCard} className="awesome" />
+                <span className="text">Contato</span>
+              </a>
+            </li>
+
+            <li className="list">
+              <a href="/" className="icone">
+                <FontAwesomeIcon icon={faMapLocationDot} className="awesome" />
+                <span className="text">Onde estamos?</span>
+              </a>
+            </li>
+            <span className="indicador"></span>
+          </ul>
         </ContainerMenu>
       </ContainerHeader>
       <Home>
