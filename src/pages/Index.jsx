@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 //Importação componentes
 import {
   ContainerMenu,
@@ -19,15 +21,24 @@ import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons/faMapLocatio
 //Importação imagens
 import logoLinks from "../assets/logo-links.png";
 import logoLinuxPro from "../assets/logo-linux-professional-institute.png";
-import cloudComputing from "../assets/computacao-em-nuvem.jpg";
+// import cloudComputing from "../assets/computacao-em-nuvem.jpg";
 
 function Index() {
+  const menu = useRef();
+
+  function navBar() {
+    menu.forEach(menu, (index) => {
+      menu.addEventListener("click");
+    });
+  }
+
   return (
     <div
       style={{
-        backgroundImage: `url(${cloudComputing})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundColor: "#6BB84A",
+        // backgroundImage: `url(${cloudComputing})`,
+        // backgroundRepeat: "no-repeat",
+        // backgroundSize: "cover",
       }}
     >
       <ContainerHeader>
@@ -38,42 +49,42 @@ function Index() {
         <ContainerMenu>
           <ul className="content">
             <li className="list">
-              <a href="/" className="icone active">
+              <a href="#" className="icone active" ref={menu} onClick={navBar}>
                 <FontAwesomeIcon icon={faHouse} className="awesome" />
                 <span className="text">Home</span>
               </a>
             </li>
 
             <li className="list">
-              <a href="/" className="icone">
+              <a href="#" className="icone">
                 <FontAwesomeIcon icon={faPeopleGroup} className="awesome" />
                 <span className="text">Quem Somos?</span>
               </a>
             </li>
 
             <li className="list">
-              <a href="/" className="icone">
+              <a href="#" className="icone">
                 <FontAwesomeIcon icon={faSquareCheck} className="awesome" />
                 <span className="text">O que fazemos?</span>
               </a>
             </li>
 
             <li className="list">
-              <a href="/" className="icone">
+              <a href="#" className="icone">
                 <FontAwesomeIcon icon={faCommentDots} className="awesome" />
                 <span className="text">Depoimentos</span>
               </a>
             </li>
 
             <li className="list">
-              <a href="/" className="icone">
+              <a href="#" className="icone">
                 <FontAwesomeIcon icon={faAddressCard} className="awesome" />
                 <span className="text">Contato</span>
               </a>
             </li>
 
             <li className="list">
-              <a href="/" className="icone">
+              <a href="#" className="icone">
                 <FontAwesomeIcon icon={faMapLocationDot} className="awesome" />
                 <span className="text">Onde estamos?</span>
               </a>

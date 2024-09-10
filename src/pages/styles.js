@@ -47,7 +47,7 @@ export const ContainerMenu = styled.nav`
     }
 
     .awesome {
-      font-size: 30px;
+      font-size: 25px;
       color: #bfbebe;
       transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
     }
