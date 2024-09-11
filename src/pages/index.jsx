@@ -21,9 +21,10 @@ import logoLinuxPro from "../assets/images/logo-linux-professional-institute.png
 import videoBackground from "../assets/movie/maos-digitando.mp4";
 
 function Index() {
-  // const state = useState();
-
-  // function handleClick() {}
+  state = { clicked: false };
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+  };
 
   return (
     <ContainerMain>
@@ -31,6 +32,7 @@ function Index() {
       <video className="videoBackground" autoPlay loop muted>
         <source src={videoBackground} type="video/mp4" />
       </video>
+
       <ContainerHeader>
         <ContainerLogo>
           <a href="/">
@@ -39,8 +41,10 @@ function Index() {
         </ContainerLogo>
 
         <ContainerMenu>
-          <MenuIcons>
-            {/* <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i> */}
+          <MenuIcons onClick={this.handleClick}>
+            <i
+              className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
+            ></i>
           </MenuIcons>
           <ul>
             {MenuData.map((item, index) => {
