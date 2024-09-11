@@ -1,109 +1,70 @@
 import styled from "styled-components";
 
-export const ContainerHeader = styled.div`
+export const ContainerMain = styled.div`
+  /* border: 1px solid blue; */
+
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 100px;
+`;
+
+export const ContainerHeader = styled.div`
+  /* border: 1px solid #000; */
+
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #808080;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  width: 95%;
+  border-radius: 15px;
+  margin-top: 20px;
 `;
 
 export const ContainerLogo = styled.div`
+  /* border: 1px solid red; */
+
   img {
     width: 250px;
   }
 `;
 
+export const MenuIcons = styled.div`
+  .fa-bars {
+    color: #fff;
+  }
+`;
+
 export const ContainerMenu = styled.nav`
+  /* border: 1px solid red; */
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.25rem; // 1rem = 16px -> 1.25 * 16 = 20px
 
-  border-radius: 40px;
-  background-color: #6bb84a;
-  background: #fff;
-  padding: 0 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-  .content {
-    display: flex;
-    height: 70px;
+  ul {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 10px;
     align-items: center;
+    text-align: center;
+    justify-content: end;
     list-style: none;
-    position: relative;
 
-    .icone {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 100px;
+    .nav-links {
       text-decoration: none;
-      color: inherit;
-      transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
+      color: #fff;
+      padding: 0.7rem 1rem;
+      white-space: nowrap;
+
+      i {
+        padding-right: 10px;
+      }
     }
 
-    .icone.active {
-      transform: translateY(-10px);
-    }
-
-    .awesome {
-      font-size: 25px;
-      color: #bfbebe;
-      transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
-    }
-
-    .icone.active .awesome {
-      color: #6bb84a;
-    }
-
-    .text {
-      position: absolute;
-      font-size: 12px;
-      font-weight: 400;
-      color: #6bb84a;
-      opacity: 0;
-      transform: translateY(32px);
-      transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
-    }
-
-    .icone.active .text {
-      opacity: 1;
-    }
-
-    .indicador {
-      position: absolute;
-      top: -1px;
-      left: 50px;
-      height: 22px;
-      width: 22px;
-      background-color: #fff;
-      border: 5px solid #6bb84a;
-      border-radius: 50%;
-      transform: translateX(-50%);
-      transition: all 0.5s cubic-bezier(0.68, -0, 55, 0.265, 1.55);
-    }
-
-    .indicador::before,
-    .indicador::after {
-      content: " ";
-      position: absolute;
-      bottom: -8px;
-      height: 24px;
-      width: 19px;
-    }
-
-    .indicador::before {
-      left: -22px;
-      background-color: #fff;
-      border-top-right-radius: 25px;
-      box-shadow: 1px -13px #6bb84a;
-    }
-
-    .indicador::after {
-      right: -22px;
-      background-color: #fff;
-      border-top-left-radius: 25px;
-      box-shadow: -1px -13px #6bb84a;
+    .nav-links:hover {
+      background: rgb(80, 80, 238);
+      border-radius: 8px;
+      transition: all 0.2s ease-in-out;
     }
   }
 `;

@@ -1,3 +1,6 @@
+//Importação dos Hooks
+// import { useState } from "react";
+
 //Importação componentes
 import { MenuData } from "../components/MenuData-Navbar";
 
@@ -7,22 +10,30 @@ import {
   ContainerHeader,
   Home,
   LinuxPro,
+  ContainerMain,
+  MenuIcons,
 } from "./styles";
 
 //Importação imagens
-import logoLinks from "../assets/logo-links.png";
-import logoLinuxPro from "../assets/logo-linux-professional-institute.png";
-// import cloudComputing from "../assets/computacao-em-nuvem.jpg";
+import logoLinks from "../assets/images/logo-links.png";
+import logoLinuxPro from "../assets/images/logo-linux-professional-institute.png";
 
 function Index() {
+  // const state = useState();
+
+  // function handleClick() {}
+
   return (
-    <div>
+    <ContainerMain>
       <ContainerHeader>
         <ContainerLogo>
           <img src={logoLinks} alt="logo-links-informática" />
         </ContainerLogo>
 
         <ContainerMenu>
+          <MenuIcons>
+            {/* <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i> */}
+          </MenuIcons>
           <ul>
             {MenuData.map((item, index) => {
               return (
@@ -46,7 +57,7 @@ function Index() {
           <img src={logoLinuxPro} alt="logo-linux-professional-institute" />
         </LinuxPro>
       </Home>
-    </div>
+    </ContainerMain>
   );
 
   //     {/* Nossas Soluções */}
