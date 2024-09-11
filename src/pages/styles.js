@@ -6,13 +6,31 @@ export const ContainerMain = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .videoBackground {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -2;
+  }
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 `;
 
 export const ContainerHeader = styled.div`
   /* border: 1px solid #000; */
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
   background-color: #808080;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
@@ -23,9 +41,9 @@ export const ContainerHeader = styled.div`
 
 export const ContainerLogo = styled.div`
   /* border: 1px solid red; */
-
   img {
     width: 250px;
+    cursor: pointer;
   }
 `;
 
@@ -44,7 +62,7 @@ export const ContainerMenu = styled.nav`
   ul {
     display: grid;
     grid-template-columns: repeat(6, auto);
-    grid-gap: 10px;
+    grid-gap: 5px;
     align-items: center;
     text-align: center;
     justify-content: end;

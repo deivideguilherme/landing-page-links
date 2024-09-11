@@ -12,11 +12,13 @@ import {
   LinuxPro,
   ContainerMain,
   MenuIcons,
+  Overlay,
 } from "./styles";
 
 //Importação imagens
 import logoLinks from "../assets/images/logo-links.png";
 import logoLinuxPro from "../assets/images/logo-linux-professional-institute.png";
+import videoBackground from "../assets/movie/maos-digitando.mp4";
 
 function Index() {
   // const state = useState();
@@ -25,9 +27,15 @@ function Index() {
 
   return (
     <ContainerMain>
+      <Overlay />
+      <video className="videoBackground" autoPlay loop muted>
+        <source src={videoBackground} type="video/mp4" />
+      </video>
       <ContainerHeader>
         <ContainerLogo>
-          <img src={logoLinks} alt="logo-links-informática" />
+          <a href="/">
+            <img src={logoLinks} alt="logo-links-informática" />
+          </a>
         </ContainerLogo>
 
         <ContainerMenu>
