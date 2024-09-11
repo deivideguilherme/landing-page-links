@@ -1,15 +1,12 @@
 //Importação dos Hooks
-// import { useState } from "react";
+import { useState } from "react";
 
 //Importação componentes
 import { MenuData } from "../components/MenuData-Navbar";
 
 import {
-  ContainerMenu,
-  ContainerLogo,
   ContainerHeader,
   Home,
-  LinuxPro,
   ContainerMain,
   MenuIcons,
   Overlay,
@@ -21,9 +18,9 @@ import logoLinuxPro from "../assets/images/logo-linux-professional-institute.png
 import videoBackground from "../assets/movie/maos-digitando.mp4";
 
 function Index() {
-  state = { clicked: false };
-  handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    setClicked(!clicked);
   };
 
   return (
@@ -34,17 +31,17 @@ function Index() {
       </video>
 
       <ContainerHeader>
-        <ContainerLogo>
-          <a href="/">
-            <img src={logoLinks} alt="logo-links-informática" />
-          </a>
-        </ContainerLogo>
+        <a href="/">
+          <img
+            src={logoLinks}
+            alt="logo-links-informática"
+            className="logo-links"
+          />
+        </a>
 
-        <ContainerMenu>
-          <MenuIcons onClick={this.handleClick}>
-            <i
-              className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
-            ></i>
+        <nav className="nav-menu">
+          <MenuIcons onClick={handleClick}>
+            <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
           </MenuIcons>
           <ul>
             {MenuData.map((item, index) => {
@@ -58,16 +55,17 @@ function Index() {
               );
             })}
           </ul>
-        </ContainerMenu>
+        </nav>
       </ContainerHeader>
+
       <Home>
         <p>Computação em Nuvem Amazon AWS</p>
         <p>Consultoria especializada em Redes e Servidores</p>
         <p>Soluções Open Source e Software Livre</p>
 
-        <LinuxPro>
+        <div className="logo-linux-pro">
           <img src={logoLinuxPro} alt="logo-linux-professional-institute" />
-        </LinuxPro>
+        </div>
       </Home>
     </ContainerMain>
   );

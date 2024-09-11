@@ -27,35 +27,31 @@ export const Overlay = styled.div`
 `;
 
 export const ContainerHeader = styled.div`
-  /* border: 1px solid #000; */
-
   display: flex;
   justify-content: space-around;
-
   background-color: #808080;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   width: 95%;
   border-radius: 15px;
   margin-top: 20px;
-`;
 
-export const ContainerLogo = styled.div`
-  /* border: 1px solid red; */
-  img {
-    width: 250px;
+  .logo-links {
+    width: 200px;
     cursor: pointer;
+  }
+
+  .nav-menu {
   }
 `;
 
 export const MenuIcons = styled.div`
   .fa-bars {
-    color: #fff;
+    color: #000;
   }
+  display: none;
 `;
 
 export const ContainerMenu = styled.nav`
-  /* border: 1px solid red; */
-
   display: flex;
   font-size: 1.25rem; // 1rem = 16px -> 1.25 * 16 = 20px
 
@@ -70,7 +66,7 @@ export const ContainerMenu = styled.nav`
 
     .nav-links {
       text-decoration: none;
-      color: #fff;
+      color: #000;
       padding: 0.7rem 1rem;
       white-space: nowrap;
 
@@ -85,6 +81,25 @@ export const ContainerMenu = styled.nav`
       transition: all 0.2s ease-in-out;
     }
   }
+
+  /* @media screen and (max-width: 850px) {
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      border-radius: 13px;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      align-items: stretch;
+      padding: 80px 0 30px 0;
+      margin: 0;
+    } */
 `;
 
 export const Home = styled.section`
@@ -97,17 +112,18 @@ export const Home = styled.section`
 
   p {
     font-size: 25px;
+    color: #fff;
   }
-`;
 
-export const LinuxPro = styled.div`
-  width: 47%;
-  margin-top: 40px;
+  .logo-linux-pro {
+    width: 47%;
+    margin-top: 40px;
 
-  display: flex;
-  justify-content: end;
-  img {
-    width: 130px;
+    display: flex;
+    justify-content: end;
+    img {
+      width: 130px;
+    }
   }
 `;
 
