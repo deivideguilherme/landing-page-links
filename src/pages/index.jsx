@@ -4,13 +4,7 @@ import { useState } from "react";
 //Importação componentes
 import { MenuData } from "../components/MenuData-Navbar";
 
-import {
-  ContainerHeader,
-  Home,
-  ContainerMain,
-  MenuIcons,
-  Overlay,
-} from "./styles";
+import { Home, ContainerMain, Overlay } from "./styles";
 
 //Importação imagens
 import logoLinks from "../assets/images/logo-links.png";
@@ -30,7 +24,7 @@ function Index() {
         <source src={videoBackground} type="video/mp4" />
       </video>
 
-      <ContainerHeader>
+      <nav className="navbar-items">
         <a href="/">
           <img
             src={logoLinks}
@@ -39,24 +33,23 @@ function Index() {
           />
         </a>
 
-        <nav className="nav-menu">
-          <MenuIcons onClick={handleClick}>
-            <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
-          </MenuIcons>
-          <ul>
-            {MenuData.map((item, index) => {
-              return (
-                <li key={index}>
-                  <a href={item.url} className={item.cName}>
-                    <i className={item.icon}></i>
-                    {item.title}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </ContainerHeader>
+        <div className="menu-icons" onClick={handleClick}>
+          <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
+
+        <ul className={clicked ? "nav-menu active" : "nav-menu"}>
+          {MenuData.map((item, index) => {
+            return (
+              <li key={index}>
+                <a href={item.url} className={item.cName}>
+                  <i className={item.icon}></i>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
 
       <Home>
         <p>Computação em Nuvem Amazon AWS</p>
