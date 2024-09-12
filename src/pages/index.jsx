@@ -1,13 +1,14 @@
 //Importação dos Hooks
 import { useState } from "react";
+import TypeIt from "typeit-react";
 
 //Importação componentes
 import { MenuData } from "../components/MenuData-Navbar";
 
-import { Home, ContainerMain, Overlay } from "./styles";
+import { Home, ContainerMain, Overlay, ContainerWhats } from "./styles";
 
 //Importação imagens
-import logoLinks from "../assets/images/logo-links.png";
+import logoLinks from "../assets/images/logo-links-branco.png";
 import logoLinuxPro from "../assets/images/logo-linux-professional-institute.png";
 import videoBackground from "../assets/movie/maos-digitando.mp4";
 
@@ -52,14 +53,60 @@ function Index() {
       </nav>
 
       <Home>
-        <p>Computação em Nuvem Amazon AWS</p>
-        <p>Consultoria especializada em Redes e Servidores</p>
-        <p>Soluções Open Source e Software Livre</p>
+        <div className="fixed-text">Aqui você encontra</div>
+        <div className="animated-text">
+          <div>
+            <TypeIt
+              options={{ loop: true }}
+              getBeforeInit={(instance) => {
+                instance
+                  .type("Excelência", { delay: 2000 })
+                  .pause(750)
+                  .delete(10)
+                  .pause(200)
+                  .type("Eficiência", { delay: 2000 })
+                  .pause(750)
+                  .delete(10)
+                  .pause(200)
+                  .type("Confiabilidade", { delay: 2000 })
+                  .pause(750)
+                  .delete(14)
+                  .pause(200)
+                  .type("Profissionalismo", { delay: 2000 })
+                  .pause(750)
+                  .delete(16)
+                  .pause(200)
+                  .type("Dedicação", { delay: 2000 });
+
+                // Remember to return it!
+                return instance;
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="apresentation-text">
+          <p>
+            Tecnologia confiável, soluções sob medida: cuidamos da sua <br />
+            infraestrutura para que você foque no que realmente importa.
+          </p>
+        </div>
 
         <div className="logo-linux-pro">
           <img src={logoLinuxPro} alt="logo-linux-professional-institute" />
         </div>
       </Home>
+
+      {/* Botão Whatsapp */}
+      <ContainerWhats>
+        <a
+          href="https://api.whatsapp.com/send?phone=5516996310657&text=Gostaria%20de%20ajuda%20técnica?%20Vamos%20Convesar!"
+          className="icon-whats"
+          target="_blank"
+        >
+          <i className="fa-brands fa-whatsapp"></i>
+        </a>
+      </ContainerWhats>
     </ContainerMain>
   );
 
@@ -72,6 +119,11 @@ function Index() {
   //     <Company>
   //       <Title />
   //     </Company>
+
+  //    {/* Parceiros */}
+  //     <Contact>
+  //       <Form></Form>
+  //     </Contact>
 
   //     {/* Fale Conosco */}
   //     <Contact>

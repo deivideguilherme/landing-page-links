@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const ContainerMain = styled.div`
-  /* border: 1px solid blue; */
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,21 +17,23 @@ export const ContainerMain = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.2rem; // 1rem = 16px -> 1.2 * 16 = 19.2px
+    font-size: 1rem; // 1rem = 16px
     padding: 0 30px;
-    background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    width: 95%;
-    height: 80px;
-    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 120px;
     position: fixed;
-    top: 20px;
+    top: 0;
     left: 50%;
     transform: translate(-50%);
 
+    a {
+      z-index: -1;
+    }
+
     .logo-links {
-      margin-top: 15px;
-      width: 150px;
+      margin: 20px 0 0 50px;
+      width: 250px;
       justify-self: start;
       cursor: pointer;
     }
@@ -46,20 +46,21 @@ export const ContainerMain = styled.div`
       text-align: center;
       justify-content: end;
       list-style: none;
+      margin-right: 50px;
 
       .nav-links {
         text-decoration: none;
-        color: #000;
-        padding: 0.7rem 1rem;
+        color: var(--septenary-color);
+        padding: 0.5rem 1rem;
         white-space: nowrap;
 
-        i {
+        /* i {
           padding-right: 7px;
-        }
+        } */
       }
 
       .nav-links:hover {
-        background: rgb(80, 80, 238);
+        background: rgba(23, 133, 130, 0.25);
         border-radius: 8px;
         transition: all 0.2s ease-in-out;
       }
@@ -69,11 +70,11 @@ export const ContainerMain = styled.div`
       display: none;
 
       .fa-bars {
-        color: #000;
+        color: var(--septenary-color);
       }
     }
 
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 980px) {
       .navbar-items {
         z-index: 99;
       }
@@ -82,8 +83,8 @@ export const ContainerMain = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        background: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 2px 10px 0px rgba(23, 133, 130, 0.5);
         backdrop-filter: blur(4px);
         border-radius: 15px;
         width: 100%;
@@ -116,43 +117,138 @@ export const ContainerMain = styled.div`
 
       .menu-icons {
         display: block;
+        color: var(--septenary-color);
       }
     }
   }
 `;
 
 export const Overlay = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
 `;
 
 export const Home = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 200px;
+  /* border: 1px solid #fff; */
+  height: 400px;
+  width: 100%;
+  margin-top: 20%;
+  z-index: -1;
+  padding: 80px 0 0 150px;
 
-  p {
-    font-size: 25px;
-    color: #fff;
+  .fixed-text {
+    border: 1px solid #fff;
+    display: inline-block;
+    font-size: 2rem;
+    color: var(--septenary-color);
+  }
+
+  .animated-text {
+    border: 1px solid #fff;
+    display: inline-block;
+    font-size: 2rem;
+    color: var(--septenary-color);
+    margin-left: 10px;
+  }
+
+  .apresentation-text {
+    width: 35%;
+    border: 1px solid #fff;
+    font-size: 1.25rem;
+    color: var(--septenary-color);
+  }
+
+  @keyframes blinking-cursor {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes write {
+    20% {
+      width: 26.5ch;
+    }
+    70% {
+      width: 26.5ch;
+    }
+    85% {
+      width: 0;
+    }
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes text-exchange {
+    0%,
+    20% {
+      content: "Excelência";
+    }
+    21%,
+    40% {
+      content: "Eficiência";
+    }
+    41%,
+    60% {
+      content: "Confiabilidade";
+    }
+    61%,
+    80% {
+      content: "Profissionalismo";
+    }
+    81%,
+    100% {
+      content: "Dedicação";
+    }
   }
 
   .logo-linux-pro {
-    width: 100%;
-    margin-top: 40px;
+    width: auto;
+    margin-top: 30px;
+    margin-left: 40%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
 
     img {
       width: 150px;
     }
+  }
+`;
+
+export const ContainerWhats = styled.div`
+  .icon-whats {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    font-size: 30px;
+    background-color: var(--whats-color1);
+    color: var(--whats-color2);
+    border-radius: 50%;
+    padding: 1px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 100;
+    /* box-shadow: 1px 0.2px 1px #c0bdbd; */
+    opacity: 0.7;
+  }
+
+  .fa-brands {
+    padding-bottom: 4px;
+    padding-left: 2px;
+  }
+
+  .icon-whats:hover {
+    background-color: var(--whats-color2);
+    color: var(--whats-color1);
+    font-weight: 900;
+    /* box-shadow: 1px 0.2px 15px; */
   }
 `;
 
