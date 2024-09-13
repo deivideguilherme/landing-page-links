@@ -53,30 +53,43 @@ function Index() {
       </nav>
 
       <Home>
+        {/* Texto Fixo */}
         <div className="fixed-text">Aqui você encontra</div>
+
+        {/* Texto Animado */}
         <div className="animated-text">
           <div>
             <TypeIt
               options={{ loop: true }}
               getBeforeInit={(instance) => {
                 instance
-                  .type("Excelência", { delay: 2000 })
+                  .type('<span class="animated-span">Excelência</span>', {
+                    delay: 1000,
+                  })
                   .pause(750)
                   .delete(10)
                   .pause(200)
-                  .type("Eficiência", { delay: 2000 })
+                  .type('<span class="animated-span">Eficiência</span>', {
+                    delay: 1000,
+                  })
                   .pause(750)
                   .delete(10)
                   .pause(200)
-                  .type("Confiabilidade", { delay: 2000 })
+                  .type('<span class="animated-span">Confiabilidade</span>', {
+                    delay: 1000,
+                  })
                   .pause(750)
                   .delete(14)
                   .pause(200)
-                  .type("Profissionalismo", { delay: 2000 })
+                  .type('<span class="animated-span">Profissionalismo</span>', {
+                    delay: 1000,
+                  })
                   .pause(750)
                   .delete(16)
                   .pause(200)
-                  .type("Dedicação", { delay: 2000 });
+                  .type('<span class="animated-span">Dedicação</span>', {
+                    delay: 1000,
+                  });
 
                 // Remember to return it!
                 return instance;
@@ -85,10 +98,21 @@ function Index() {
           </div>
         </div>
 
+        {/* Texto de Apresentação */}
         <div className="apresentation-text">
           <p>
-            Tecnologia confiável, soluções sob medida: cuidamos da sua <br />
-            infraestrutura para que você foque no que realmente importa.
+            &#34;Tecnologia confiável, soluções sob medida: cuidamos da sua
+            <br />
+            infraestrutura para que você foque no que realmente importa.&#34;
+          </p>
+        </div>
+
+        <div className="some-services">
+          <p>
+            Computação em Nuvem Amazon AWS &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            Consultoria especializada em Redes e Servidores
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Soluções Open Source e
+            Software Livre{" "}
           </p>
         </div>
 

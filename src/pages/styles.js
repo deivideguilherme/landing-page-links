@@ -21,11 +21,12 @@ export const ContainerMain = styled.div`
     padding: 0 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     width: 100%;
-    height: 120px;
+    height: 100px;
     position: fixed;
     top: 0;
     left: 50%;
     transform: translate(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
 
     a {
       z-index: -1;
@@ -33,7 +34,7 @@ export const ContainerMain = styled.div`
 
     .logo-links {
       margin: 20px 0 0 50px;
-      width: 250px;
+      width: 200px;
       justify-self: start;
       cursor: pointer;
     }
@@ -60,7 +61,7 @@ export const ContainerMain = styled.div`
       }
 
       .nav-links:hover {
-        background: rgba(23, 133, 130, 0.25);
+        background: rgba(255, 255, 255, 0.2);
         border-radius: 8px;
         transition: all 0.2s ease-in-out;
       }
@@ -135,84 +136,58 @@ export const Overlay = styled.div`
 
 export const Home = styled.section`
   /* border: 1px solid #fff; */
-  height: 400px;
-  width: 100%;
-  margin-top: 20%;
+  height: 40%;
+  width: 65%;
+  margin-top: 10%;
   z-index: -1;
-  padding: 80px 0 0 150px;
+  padding: 60px 25px 0 25px;
+
+  div {
+    /* border: 1px solid #fff; */
+  }
 
   .fixed-text {
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     display: inline-block;
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--septenary-color);
   }
 
   .animated-text {
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     display: inline-block;
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--septenary-color);
     margin-left: 10px;
   }
 
   .apresentation-text {
-    width: 35%;
-    border: 1px solid #fff;
+    margin-top: 10px;
+    width: 60%;
     font-size: 1.25rem;
     color: var(--septenary-color);
   }
 
-  @keyframes blinking-cursor {
-    50% {
-      border-right-color: transparent;
-    }
+  .animated-span {
+    color: var(--primary-color);
+    font-weight: 600;
   }
 
-  @keyframes write {
-    20% {
-      width: 26.5ch;
-    }
-    70% {
-      width: 26.5ch;
-    }
-    85% {
-      width: 0;
-    }
-    100% {
-      width: 0;
-    }
-  }
-
-  @keyframes text-exchange {
-    0%,
-    20% {
-      content: "Excelência";
-    }
-    21%,
-    40% {
-      content: "Eficiência";
-    }
-    41%,
-    60% {
-      content: "Confiabilidade";
-    }
-    61%,
-    80% {
-      content: "Profissionalismo";
-    }
-    81%,
-    100% {
-      content: "Dedicação";
-    }
+  .some-services {
+    width: 100%;
+    margin-top: 10%;
+    padding: 10px;
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 1rem;
   }
 
   .logo-linux-pro {
-    width: auto;
-    margin-top: 30px;
-    margin-left: 40%;
+    width: 100%;
+    margin-top: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 50px;
 
     img {
       width: 150px;
@@ -236,7 +211,7 @@ export const ContainerWhats = styled.div`
     text-decoration: none;
     z-index: 100;
     /* box-shadow: 1px 0.2px 1px #c0bdbd; */
-    opacity: 0.7;
+    /* opacity: 0.7; */
   }
 
   .fa-brands {
