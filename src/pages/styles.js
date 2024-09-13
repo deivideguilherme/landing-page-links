@@ -26,7 +26,7 @@ export const ContainerMain = styled.div`
     top: 0;
     left: 50%;
     transform: translate(-50%);
-    background-color: rgba(255, 255, 255, 0.1);
+    /* background-color: rgba(255, 255, 255, 0.1); */
 
     a {
       z-index: -1;
