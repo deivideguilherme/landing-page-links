@@ -135,16 +135,11 @@ export const Overlay = styled.div`
 `;
 
 export const Home = styled.section`
-  /* border: 1px solid #fff; */
   height: 40%;
   width: 65%;
   margin-top: 10%;
   z-index: -1;
   padding: 60px 25px 0 25px;
-
-  div {
-    /* border: 1px solid #fff; */
-  }
 
   .fixed-text {
     /* border: 1px solid #fff; */
@@ -191,6 +186,61 @@ export const Home = styled.section`
 
     img {
       width: 150px;
+    }
+  }
+`;
+
+export const ProvidedServices = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 800px;
+
+  .logos-systems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    width: 65%;
+
+    .logos {
+      width: 200px;
+    }
+  }
+
+  .text-services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      text-align: center;
+      margin-top: 30px;
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      text-align: center;
+      font-weight: 200;
+
+      ul {
+        list-style: none;
+
+        li {
+          margin-bottom: 15px;
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
     }
   }
 `;

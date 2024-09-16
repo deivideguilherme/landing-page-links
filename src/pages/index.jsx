@@ -5,12 +5,20 @@ import TypeIt from "typeit-react";
 //Importação componentes
 import { MenuData } from "../components/MenuData-Navbar";
 
-import { Home, ContainerMain, Overlay, ContainerWhats } from "./styles";
+import {
+  Home,
+  ContainerMain,
+  Overlay,
+  ContainerWhats,
+  ProvidedServices,
+} from "./styles";
 
 //Importação imagens
 import logoLinks from "../assets/images/logo-links-branco.png";
 import logoLinuxPro from "../assets/images/logo-linux-professional-institute.png";
 import videoBackground from "../assets/movie/maos-digitando.mp4";
+import logoWindows from "../assets/images/logo-windows.png";
+import logoLinux from "../assets/images/logo-linux.png";
 
 function Index() {
   const [clicked, setClicked] = useState(false);
@@ -120,6 +128,62 @@ function Index() {
           <img src={logoLinuxPro} alt="logo-linux-professional-institute" />
         </div>
       </Home>
+
+      {/* Resumos dos serviços prestados */}
+      <ProvidedServices>
+        <div className="logos-systems">
+          <img src={logoLinux} alt="logo-linux" className="logos logo-linux" />
+          <img
+            src={logoWindows}
+            alt="logo-windows"
+            className="logos logo-windows"
+          />
+        </div>
+        <div className="text-services">
+          <h3>
+            Maximize o potencial de sua empresa criando diferenciais <br />
+            competitivos e minimizando custos com nossas soluções em:
+          </h3>
+          <p>
+            <ul>
+              <li>
+                <i className="fa-solid fa-server" />
+                Servidores
+              </li>
+              <li>
+                <i className="fa-solid fa-shield-halved" />
+                Segurança
+              </li>
+              <li>
+                <i className="fa-solid fa-network-wired" />
+                Redes heterogêneas (Linux e Windows)
+              </li>
+              <li>
+                <i className="fa-brands fa-aws" />
+                Computação em nuvem Amazon AWS
+              </li>
+              <li>
+                <i className="fa-solid fa-gears" />
+                Automatização das rotinas de Backup (Local e em Nuvem)
+              </li>
+              <li>
+                <i className="fa-solid fa-video" />
+                Monitoramento total dos recursos computacionais em sua rede
+              </li>
+              <li>
+                <i className="fa-solid fa-globe" />
+                Interligação segura de escritórios (Matriz e Filiais) através da
+                VPN
+              </li>
+              <li>
+                <i className="fa-solid fa-computer" />
+                Virtualização: Compartilhe recursos, tendo vários Servidores e
+                Estações de Trabalho virtuais em um único servidor
+              </li>
+            </ul>
+          </p>
+        </div>
+      </ProvidedServices>
 
       {/* Botão Whatsapp */}
       <ContainerWhats>
