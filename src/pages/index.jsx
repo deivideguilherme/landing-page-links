@@ -219,7 +219,7 @@ function Index() {
   //     </Contact>
 
   //     <Rodape>
-  //       <p>Powered By Deivide Guilherme</p>
+  //       <p>© 2024 Deivide Guilherme</p>
   //     </Rodape>
   //   </div>
 }
