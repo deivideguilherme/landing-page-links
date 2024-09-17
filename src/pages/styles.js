@@ -245,6 +245,8 @@ export const ProvidedServices = styled.div`
   }
 `;
 
+export const Carousel = styled.div``;
+
 export const ContainerWhats = styled.div`
   .icon-whats {
     position: fixed;

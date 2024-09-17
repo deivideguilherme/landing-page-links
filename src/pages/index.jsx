@@ -4,6 +4,7 @@ import TypeIt from "typeit-react";
 
 //Importação componentes
 import { MenuData } from "../components/MenuData-Navbar";
+import { CarouselData } from "../components/CarouselData";
 
 import {
   Home,
@@ -11,6 +12,7 @@ import {
   Overlay,
   ContainerWhats,
   ProvidedServices,
+  Carousel,
 } from "./styles";
 
 //Importação imagens
@@ -183,6 +185,24 @@ function Index() {
             </ul>
           </p>
         </div>
+
+        {/* Carrossel de tecnologias */}
+        <Carousel>
+          <div className="w-3/4 m-auto">
+            <div className="mt-20">
+              {CarouselData.map((item, index) => {
+                console.log(CarouselData);
+                return (
+                  <div key={index}>
+                    <div>
+                      <img src={item.txt} alt="imagens-tecnologias" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Carousel>
       </ProvidedServices>
 
       {/* Botão Whatsapp */}
