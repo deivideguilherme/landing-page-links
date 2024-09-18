@@ -1,5 +1,5 @@
 //Importação dos Hooks
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import TypeIt from "typeit-react";
 
 //Importando biblioteca Carrossel
@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 //Importação componentes
 import { MenuData } from "../components/MenuData-Navbar";
 import { CarouselData } from "../components/CarouselData";
+import { ProvidedServicesData } from "../components/ProvidedServicesData";
 
 import {
   Home,
@@ -17,7 +18,7 @@ import {
   Overlay,
   ContainerWhats,
   ProvidedServices,
-  Carousel,
+  Nav,
 } from "./styles";
 
 //Importação imagens
@@ -28,21 +29,49 @@ import logoWindows from "../assets/images/logo-windows.png";
 import logoLinux from "../assets/images/logo-linux.png";
 
 function Index() {
+  //Hook alterar cor/opacidade do menu
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  //Hook abrir/fechar menu quando em responsividade
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     setClicked(!clicked);
   };
 
-  //Carrossel
+  //Carrossel ------->
+  const sliderRef = useRef(null);
+
   const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: false,
-    centerPadding: "60px",
+    infinite: true,
     slidesToShow: 3,
-    speed: 500,
-    autoPlay: true,
+    slidesToScroll: 1,
+    speed: 5000,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    cssEase: "linear",
   };
+
+  const handleMouseEnterNext = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const handleMouseEnterPrev = () => {
+    sliderRef.current.slickPrev();
+  };
+  //Carrossel <-------
 
   return (
     <ContainerMain>
@@ -51,7 +80,8 @@ function Index() {
         <source src={videoBackground} type="video/mp4" />
       </video>
 
-      <nav className="navbar-items">
+      {/* <nav className="navbar-items"> */}
+      <Nav scrolled={scrolled} className="navbar-items">
         <a href="/">
           <img
             src={logoLinks}
@@ -60,6 +90,7 @@ function Index() {
           />
         </a>
 
+        {/* Icone de abrir e fechar o menu quando em resposividade */}
         <div className="menu-icons" onClick={handleClick}>
           <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
@@ -69,14 +100,13 @@ function Index() {
             return (
               <li key={index}>
                 <a href={item.url} className={item.cName}>
-                  <i className={item.icon}></i>
                   {item.title}
                 </a>
               </li>
             );
           })}
         </ul>
-      </nav>
+      </Nav>
 
       <Home>
         {/* Texto Fixo */}
@@ -164,66 +194,53 @@ function Index() {
           </h3>
           <p>
             <ul>
-              <li>
-                <i className="fa-solid fa-server" />
-                Servidores
-              </li>
-              <li>
-                <i className="fa-solid fa-shield-halved" />
-                Segurança
-              </li>
-              <li>
-                <i className="fa-solid fa-network-wired" />
-                Redes heterogêneas (Linux e Windows)
-              </li>
-              <li>
-                <i className="fa-brands fa-aws" />
-                Computação em nuvem Amazon AWS
-              </li>
-              <li>
-                <i className="fa-solid fa-gears" />
-                Automatização das rotinas de Backup (Local e em Nuvem)
-              </li>
-              <li>
-                <i className="fa-solid fa-video" />
-                Monitoramento total dos recursos computacionais em sua rede
-              </li>
-              <li>
-                <i className="fa-solid fa-globe" />
-                Interligação segura de escritórios (Matriz e Filiais) através da
-                VPN
-              </li>
-              <li>
-                <i className="fa-solid fa-computer" />
-                Virtualização: Compartilhe recursos, tendo vários Servidores e
-                Estações de Trabalho virtuais em um único servidor
-              </li>
+              {ProvidedServicesData.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <i className={item.icon}></i> {item.title}
+                  </li>
+                );
+              })}
             </ul>
           </p>
         </div>
 
-        {/* Carrossel de tecnologias */}
-        <Carousel>
-          <div className="w-3/4 m-auto">
-            <div className="mt-20">
-              <Slider {...settings}>
-                {CarouselData.map((item, index) => {
-                  return (
-                    <div key={index} className="container-logos">
-                      <div>
-                        <img src={item.img} className="carousel-logos" />
-                      </div>
+        <label> Algumas das tecnologias que utilizamos: </label>
 
-                      {/* <div className="flex flex-col justify-center items-center gap-4 p-4">
-                        <button>Mais</button>
-                      </div> */}
-                    </div>
-                  );
-                })}
-              </Slider>
-            </div>
+        {/* Carrossel de imagens das tecnologias */}
+        <div className="carousel-container">
+          <Slider ref={sliderRef} {...settings}>
+            {CarouselData.map((item, index) => {
+              return (
+                <div key={index} className="image-container">
+                  <img
+                    src={item.img}
+                    alt={`Imagem ${index}`}
+                    className="carousel-logos"
+                  />
+                </div>
+              );
+            })}
+          </Slider>
+
+          {/* Ícone de seta esquerda */}
+          <div
+            className="arrow prev"
+            onMouseEnter={handleMouseEnterPrev}
+            onClick={handleMouseEnterPrev}
+          >
+            &#8249;
           </div>
-        </Carousel>
+
+          {/* Ícone de seta direita */}
+          <div
+            className="arrow next"
+            onMouseEnter={handleMouseEnterNext}
+            onClick={handleMouseEnterNext}
+          >
+            &#8250;
+          </div>
+        </div>
       </ProvidedServices>
 
       {/* Botão Whatsapp */}
