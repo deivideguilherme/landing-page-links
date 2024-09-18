@@ -198,7 +198,7 @@ export const ProvidedServices = styled.div`
   margin-top: 30px;
   background-color: var(--secondary-color);
   width: 100%;
-  height: 800px;
+  height: 100vh;
 
   .logos-systems {
     display: flex;
@@ -245,7 +245,19 @@ export const ProvidedServices = styled.div`
   }
 `;
 
-export const Carousel = styled.div``;
+export const Carousel = styled.div`
+  width: 50%;
+
+  .container-logos {
+    display: flex;
+    align-items: center;
+  }
+
+  //Imagens do carrossel
+  .carousel-logos {
+    width: 150px;
+  }
+`;
 
 export const ContainerWhats = styled.div`
   .icon-whats {

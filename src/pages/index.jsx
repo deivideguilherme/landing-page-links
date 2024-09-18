@@ -2,6 +2,11 @@
 import { useState } from "react";
 import TypeIt from "typeit-react";
 
+//Importando biblioteca Carrossel
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 //Importação componentes
 import { MenuData } from "../components/MenuData-Navbar";
 import { CarouselData } from "../components/CarouselData";
@@ -26,6 +31,17 @@ function Index() {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     setClicked(!clicked);
+  };
+
+  //Carrossel
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: false,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    speed: 500,
+    autoPlay: true,
   };
 
   return (
@@ -190,16 +206,21 @@ function Index() {
         <Carousel>
           <div className="w-3/4 m-auto">
             <div className="mt-20">
-              {CarouselData.map((item, index) => {
-                console.log(CarouselData);
-                return (
-                  <div key={index}>
-                    <div>
-                      <img src={item.txt} alt="imagens-tecnologias" />
+              <Slider {...settings}>
+                {CarouselData.map((item, index) => {
+                  return (
+                    <div key={index} className="container-logos">
+                      <div>
+                        <img src={item.img} className="carousel-logos" />
+                      </div>
+
+                      {/* <div className="flex flex-col justify-center items-center gap-4 p-4">
+                        <button>Mais</button>
+                      </div> */}
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </Slider>
             </div>
           </div>
         </Carousel>
