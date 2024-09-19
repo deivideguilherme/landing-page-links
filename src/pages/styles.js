@@ -196,7 +196,7 @@ export const ProvidedServices = styled.div`
   margin-top: 30px;
   background-color: var(--secondary-color);
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   .logos-systems {
     display: flex;
@@ -223,7 +223,7 @@ export const ProvidedServices = styled.div`
       font-size: 1.5rem;
     }
 
-    p {
+    .container-text-services {
       margin-top: 30px;
       font-size: 1.2rem;
       text-align: center;
@@ -244,7 +244,7 @@ export const ProvidedServices = styled.div`
   }
 
   label {
-    margin-top: 50px;
+    margin: 50px 0 30px;
     color: var(--tertiary-color);
     font-weight: bold;
   }
@@ -296,6 +296,7 @@ export const ProvidedServices = styled.div`
   .slick-track {
     display: flex;
     gap: 90px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -331,7 +332,11 @@ export const ContainerWhats = styled.div`
   }
 `;
 
-export const Services = styled.section``;
+export const Services = styled.section`
+  width: 100%;
+  height: 800px;
+  background-color: var(--primary-color);
+`;
 
 export const Company = styled.section``;
 

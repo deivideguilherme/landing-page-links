@@ -2,15 +2,16 @@
 import { useState, useRef, useEffect } from "react";
 import TypeIt from "typeit-react";
 
-//Importando biblioteca Carrossel
+//Importando bibliotecas
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 //Importação componentes
-import { MenuData } from "../components/MenuData-Navbar";
-import { CarouselData } from "../components/CarouselData";
-import { ProvidedServicesData } from "../components/ProvidedServicesData";
+import { MenuData } from "../components/Navbar/MenuData-Navbar";
+import { CarouselData } from "../components/Carousel/CarouselData";
+import { ProvidedServicesData } from "../components/ProvidedServices/ProvidedServicesData";
+import ServiceCards from "../components/Cards";
 
 import {
   Home,
@@ -19,6 +20,7 @@ import {
   ContainerWhats,
   ProvidedServices,
   Nav,
+  Services,
 } from "./styles";
 
 //Importação imagens
@@ -192,7 +194,7 @@ function Index() {
             Maximize o potencial de sua empresa criando diferenciais <br />
             competitivos e minimizando custos com nossas soluções em:
           </h3>
-          <p>
+          <div className="container-text-services">
             <ul>
               {ProvidedServicesData.map((item, index) => {
                 return (
@@ -202,7 +204,7 @@ function Index() {
                 );
               })}
             </ul>
-          </p>
+          </div>
         </div>
 
         <label> Algumas das tecnologias que utilizamos: </label>
@@ -253,13 +255,13 @@ function Index() {
           <i className="fa-brands fa-whatsapp"></i>
         </a>
       </ContainerWhats>
+
+      {/* Serviços oferecidos pela empresa */}
+      <Services>
+        <ServiceCards title="Teste" description="Lorem, ipsum."></ServiceCards>
+      </Services>
     </ContainerMain>
   );
-
-  //     {/* Nossas Soluções */}
-  //     <Services>
-  //       <Title />
-  //     </Services>
 
   //     {/* Quem somos? */}
   //     <Company>
