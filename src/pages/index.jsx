@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { MenuData } from "../components/Navbar/MenuData-Navbar";
 import { CarouselData } from "../components/Carousel/CarouselData";
 import { ProvidedServicesData } from "../components/ProvidedServices/ProvidedServicesData";
+import { ServicesData } from "../components/Cards/ServicesData";
 import ServiceCards from "../components/Cards";
 
 import {
@@ -258,7 +259,14 @@ function Index() {
 
       {/* Serviços oferecidos pela empresa */}
       <Services>
-        <ServiceCards title="Teste" description="Lorem, ipsum."></ServiceCards>
+        {ServicesData.map((service, index) => (
+          <ServiceCards
+            key={index}
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+          />
+        ))}
       </Services>
     </ContainerMain>
   );

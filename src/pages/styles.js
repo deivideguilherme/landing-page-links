@@ -333,6 +333,9 @@ export const ContainerWhats = styled.div`
 `;
 
 export const Services = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   height: 800px;
   background-color: var(--primary-color);
