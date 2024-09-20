@@ -332,13 +332,12 @@ export const ContainerWhats = styled.div`
   }
 `;
 
-export const Services = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  height: 800px;
-  background-color: var(--primary-color);
+export const Services = styled.div`
+  margin: 50px 0 50px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  width: 80%;
 `;
 
 export const Company = styled.section``;

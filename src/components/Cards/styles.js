@@ -1,37 +1,50 @@
 import styled from "styled-components";
 
 export const Cards = styled.div`
-  border: 1px solid #000;
-  margin: 10px;
+  color: #ddd;
+  cursor: pointer;
 
   .app-card {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 200px;
-    grid-gap: 20px;
-    justify-items: center;
-  }
-  .card {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 2rem; //1rem = 16px
-    width: 200px;
-    height: 200px;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: visible;
-    transition: height 0.3s ease;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 3rem 2rem;
+    margin: 20px;
+  }
+
+  .card:hover {
+    opacity: 0.8;
+  }
+
+  .card:active {
+    opacity: 0.5;
+  }
+
+  .icon-services {
+    width: 90px;
+    height: 60px;
+  }
+
+  .title,
+  .icon-services {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--quinary-color);
   }
 
   .card p {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     line-height: 150%;
-    text-align: center;
+    text-align: justify;
+    text-indent: 2rem;
   }
 
   .expand {
-    width: 400px;
+    width: 40rem;
   }
 `;
